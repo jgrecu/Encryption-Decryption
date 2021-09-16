@@ -1,7 +1,7 @@
 package encryptdecrypt;
 
 public class Encrypt {
-    private final String str = "abcdefghijklmnopqrstuvwxyz";
+    //private final String str = "abcdefghijklmnopqrstuvwxyz";
 
     public String encryptText(String input) {
         StringBuilder sb = new StringBuilder();
@@ -16,16 +16,32 @@ public class Encrypt {
         return sb.toString();
     }
 
+    public String processText(String inputText, int key, String process) {
+        switch (process) {
+            case "enc":
+                return encryptText(inputText, key);
+            case "dec":
+                return decryptText(inputText, key);
+            default:
+                return null;
+        }
+    }
     public String encryptText(String input, int key) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) >= 'a' && input.charAt(i) <= 'z') {
-                char letter = input.charAt(i);
-                int indexLetter = (str.indexOf(letter) + key) % 26;
-                sb.append(str.charAt(indexLetter));
-            } else {
-                sb.append(input.charAt(i));
-            }
+            char letter = input.charAt(i);
+            char encLetter = (char) (letter + key);
+            sb.append(encLetter);
+        }
+        return sb.toString();
+    }
+
+    public String decryptText(String input, int key) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char letter = input.charAt(i);
+            char decLetter = (char) (letter - key);
+            sb.append(decLetter);
         }
         return sb.toString();
     }
