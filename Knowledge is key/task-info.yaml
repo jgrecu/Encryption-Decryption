@@ -102,6 +102,31 @@ files:
         }
     }
   learner_created: false
+- name: src/encryptdecrypt/Encrypt.java
+  visible: true
+  text: |
+    package encryptdecrypt;
+
+    public class Encrypt {
+        private final String str = "abcdefghijklmnopqrstuvwxyz";
+
+        public String encryptText(String input) {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < input.length(); i++) {
+                if (input.charAt(i) >= 'a' && input.charAt(i) <= 'z') {
+                    char letter = (char) (122 - input.charAt(i) + 97);
+                    sb.append(letter);
+                } else {
+                    sb.append(input.charAt(i));
+                }
+            }
+            return sb.toString();
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/46/stages/246/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Thu, 16 Sep 2021 11:00:35 UTC
+record: 2
