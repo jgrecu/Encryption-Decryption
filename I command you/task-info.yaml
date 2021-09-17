@@ -82,7 +82,7 @@ files:
         }
     }
   learner_created: false
-- name: src/encryptdecrypt/Encrypt.java
+- name: src/encryptdecrypt/EncryptDecrypt.java
   visible: true
   text: |
     package encryptdecrypt;
