@@ -14,7 +14,7 @@ public class EncryptDecrypt {
         }
     }
     public String encryptText(String input, int key) {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char letter = input.charAt(i);
             char encLetter = (char) (letter + key);
@@ -24,7 +24,7 @@ public class EncryptDecrypt {
     }
 
     public String decryptText(String input, int key) {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char letter = input.charAt(i);
             char decLetter = (char) (letter - key);
@@ -34,7 +34,7 @@ public class EncryptDecrypt {
     }
 
     public String encryptTextShift(String input, int key) {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char letter = input.charAt(i);
             if (Character.isLetter(letter)) {
@@ -53,7 +53,7 @@ public class EncryptDecrypt {
     }
 
     public String decryptTextShift(String input, int key) {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char letter = input.charAt(i);
             if (Character.isLetter(letter)) {
