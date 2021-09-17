@@ -35,8 +35,9 @@ public class EncryptDecrypt {
 
     public String encryptTextShift(String input, int key) {
         final StringBuilder sb = new StringBuilder();
+        char letter;
         for (int i = 0; i < input.length(); i++) {
-            char letter = input.charAt(i);
+            letter = input.charAt(i);
             if (Character.isLetter(letter)) {
                 boolean isUpper = Character.isUpperCase(letter);
                 if (isUpper) {
@@ -54,8 +55,9 @@ public class EncryptDecrypt {
 
     public String decryptTextShift(String input, int key) {
         final StringBuilder sb = new StringBuilder();
+        char letter;
         for (int i = 0; i < input.length(); i++) {
-            char letter = input.charAt(i);
+            letter = input.charAt(i);
             if (Character.isLetter(letter)) {
                 boolean isUpper = Character.isUpperCase(letter);
                 if (isUpper) {
