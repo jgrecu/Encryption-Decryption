@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
-    static final EncryptDecrypt encryptDecrypt = new EncryptDecrypt();
+    static final EncoderDecoder encoderDecoder = new EncoderDecoder();
     static final String error = "Error";
 
     public static void main(String[] args) {
@@ -27,6 +27,7 @@ public class Main {
         String process = argsMap.getOrDefault("-mode", "enc");
         int key = Integer.parseInt(argsMap.getOrDefault("-key", "0"));
         String inputText = argsMap.getOrDefault("-data", "");
+        String algorithm = argsMap.getOrDefault("-alg", "shift");
 
         if (argsMap.get("-data")  == null && argsMap.get("-in") != null) {
             String inFileName = argsMap.get("-in");
@@ -38,17 +39,17 @@ public class Main {
         }
 
         if (argsMap.get("-out") == null) {
-            processDataPrint(inputText, key, process);
+            processDataPrint(inputText, key, process, algorithm);
         } else {
             String outFileName = argsMap.get("-out");
-            processDataToFile(inputText, key, process, outFileName);
+            processDataToFile(inputText, key, process, outFileName, algorithm);
         }
 
     }
 
 
-    public static void processDataPrint(String inputText, int key, String process) {
-        String text = encryptDecrypt.processText(inputText, key, process);
+    public static void processDataPrint(String inputText, int key, String process, String algorithm) {
+        String text = encoderDecoder.processText(inputText, key, process, algorithm);
         System.out.println(text);
     }
 
@@ -70,12 +71,12 @@ public class Main {
         }
     }
 
-    private static void processDataToFile(String inputText, int key, String process, String outFileName) {
+    private static void processDataToFile(String inputText, int key, String process, String outFileName, String algorithm) {
         if (outFileName.equals("")) {
             System.out.println(error);
             System.exit(1);
         }
-        String text = encryptDecrypt.processText(inputText, key, process);
+        String text = encoderDecoder.processText(inputText, key, process, algorithm);
         try (PrintStream out = new PrintStream(new FileOutputStream(outFileName))) {
             out.print(text);
         } catch (FileNotFoundException e) {

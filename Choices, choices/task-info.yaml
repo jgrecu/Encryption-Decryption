@@ -235,6 +235,19 @@ files:
         }
     }
   learner_created: true
+- name: src/encryptdecrypt/EncryptDecryptShift.java
+  visible: true
+  learner_created: true
+- name: src/encryptdecrypt/EncryptDecryptUnicode.java
+  visible: true
+  learner_created: true
+- name: src/encryptdecrypt/EncoderDecoder.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/46/stages/250/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Wed, 22 Sep 2021 11:51:49 UTC
 record: -1
