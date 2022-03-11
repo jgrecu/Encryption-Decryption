@@ -56,13 +56,13 @@ Input:
 
 Output:
 
-Bjqhtrj yt mdujwxpnqq!
+```Bjqhtrj yt mdujwxpnqq!```
 
-Example 5:
+### Example 5:
 
 Input:
 
-java Main -key 5 -alg shift -data "Bjqhtrj yt mdujwxpnqq!" -mode dec
+```java Main -key 5 -alg shift -data "Bjqhtrj yt mdujwxpnqq!" -mode dec```
 
 Output:
 
